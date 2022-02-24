@@ -43,6 +43,14 @@ Record* Functions::create_record() {
 
 void Functions::switch_casing() {
   Node* record_list = nullptr;
+  //TEST RECORDS
+  Record* rec1 = new Record("Robi", "123", "asd");
+  Record* rec2 = new Record("Rami", "234", "asd1");
+  Record* rec3 = new Record("Levi", "345", "asd2");
+  record_list->list_push(&record_list, rec1);
+  record_list->list_push(&record_list, rec2);
+  record_list->list_push(&record_list, rec3);
+  //////////////
   string menu_nav = "";
   int hashed_menu_nav = hashit(menu_nav);
   
@@ -71,13 +79,27 @@ void Functions::switch_casing() {
         } while(hashed_menu_nav != -2);
         break;
       case 2: {
-        Record* rec = create_record();
-        record_list->list_push(&record_list, rec);
+        do {
+          Record* rec = create_record();
+          record_list->list_push(&record_list, rec);
+          cout << "2: Add member again\n";
+          cout << "b: Back\n";
+          cin >> menu_nav;
+          hashed_menu_nav = hashit(menu_nav);
+          switch(hashed_menu_nav) {
+            case -2:
+              break;
+          }
+        } while(hashed_menu_nav != -2);
         break;
       }
       case 3: {
         do {
-          cout << "Under construction!\n";
+          string name;
+          cout << "Name: ";
+          cin >> name;
+          record_list->remove_node_by_name(&record_list, name);
+          cout << "3: Remove member again\n";
           cout << "b: Back\n";
           cin >> menu_nav;
           hashed_menu_nav = hashit(menu_nav);
@@ -89,11 +111,6 @@ void Functions::switch_casing() {
         break;
       }
       case 4: {
-        string name;
-        cout << "Nameasd: ";
-        cin >> name;
-        record_list->search_by_name(record_list, name);
-        /*
         do {
           string name;
           cout << "Name: ";
@@ -108,7 +125,6 @@ void Functions::switch_casing() {
               break;
           }
         } while(hashed_menu_nav != -2);
-        */
         break;
       }
       case 5: {
@@ -116,7 +132,7 @@ void Functions::switch_casing() {
           string phone_num;
           cout << "Phone number: ";
           cin >> phone_num;
-          record_list->search_by_name(record_list, phone_num);
+          record_list->search_by_phone_number(record_list, phone_num);
           cout << "5: Search again\n";
           cout << "b: Back\n";
           cin >> menu_nav;
@@ -133,7 +149,7 @@ void Functions::switch_casing() {
           string address;
           cout << "Address: ";
           cin >> address;
-          record_list->search_by_name(record_list, address);
+          record_list->search_by_address(record_list, address);
           cout << "6: Search again\n";
           cout << "b: Back\n";
           cin >> menu_nav;
