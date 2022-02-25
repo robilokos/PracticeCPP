@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/runner/PracticeCPP/PhoneBook/functions.h
+iostream
+-
+string
+-
+node.h
+/home/runner/PracticeCPP/PhoneBook/node.h
+
+/home/runner/PracticeCPP/PhoneBook/main.cpp
+iostream
+-
+functions.h
+/home/runner/PracticeCPP/PhoneBook/functions.h
+
+/home/runner/PracticeCPP/PhoneBook/node.h
+iostream
+-
+record.h
+/home/runner/PracticeCPP/PhoneBook/record.h
+
+/home/runner/PracticeCPP/PhoneBook/record.h
+iostream
+-
+

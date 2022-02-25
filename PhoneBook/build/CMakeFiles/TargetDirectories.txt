@@ -1,0 +1,3 @@
+/home/runner/PracticeCPP/PhoneBook/build/CMakeFiles/rebuild_cache.dir
+/home/runner/PracticeCPP/PhoneBook/build/CMakeFiles/main.dir
+/home/runner/PracticeCPP/PhoneBook/build/CMakeFiles/edit_cache.dir
