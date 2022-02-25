@@ -1,0 +1,2 @@
+language = "cpp"
+run = "cd PhoneBook/build && cmake ../ && cmake --build . && ./main"
